@@ -16,11 +16,11 @@ export class BreweryComponent implements OnInit {
   constructor(private myActivatedRoute: ActivatedRoute, private theService: BreweryService) { }
 
   ngOnInit() {
-    this.allBreweries();
+    this.allBreweries()
   }
 
   addNewBrewery(){
-    this.theService.createBrewery(this.theNewBreweryEntry, this.theUserId)
+    this.theService.createBrewery(this.theNewBreweryEntry)
     .subscribe((response)=>{
       this.theNewBreweryEntry = {};
       this.allBreweries();

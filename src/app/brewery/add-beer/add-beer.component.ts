@@ -16,10 +16,10 @@ export class AddBeerComponent implements OnInit {
   constructor(private theService: BreweryService, private myActivatedRoute: ActivatedRoute) { }
 
   addNewBeer(){
-    this.theService.createBeer(this.theNewBeerEntry)
+    this.theService.createBeer(this.theNewBeerEntry, this.theBreweryID)
     .subscribe((response)=>{
+      this.theNewBeerEntry = {};
       this.allBeers();
-      location.reload();
       console.log('This======>' + response + "<==== was added into the collection")
     });
   }
@@ -32,6 +32,10 @@ export class AddBeerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.myActivatedRoute.params.subscribe((params) => {
+      this.theBreweryID = params["id"]
+      this.allBeers();
+    })
   }
 
 }
