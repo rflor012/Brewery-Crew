@@ -19,7 +19,8 @@ export class AddBeerComponent implements OnInit {
     this.theService.createBeer(this.theNewBeerEntry)
     .subscribe((response)=>{
       this.allBeers();
-      location.reload();
+      this.router.navigate(['/beers'])
+      // location.reload();
       console.log('This======>' + response + "<==== was added into the collection")
     });
   }

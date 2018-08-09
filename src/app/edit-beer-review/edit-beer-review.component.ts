@@ -23,8 +23,6 @@ export class EditBeerReviewComponent implements OnInit {
 
   }
 
-
-
   changeReview(){
     this.viewService.editReview(this.theReview)
     .subscribe((res) =>{
