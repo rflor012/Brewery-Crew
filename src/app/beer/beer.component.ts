@@ -11,26 +11,28 @@ import { ActivatedRoute } from '@angular/router';
 export class BeerComponent implements OnInit {
 
   beers:Array<any>;
+  breweriesBeers:Array<any>;
+  theId:any = {};
 
-  theNewBeerEntry: any = {};
 
   constructor(private theService: BeerService, private myActivatedRoute: ActivatedRoute) { }
 
-  
+
   allBeers(){
     this.theService.allBeers()
     .subscribe((res)=>{
       this.beers = res;
     });
   }
-  addNewBeer(){
-    this.theService.createBeer(this.theNewBeerEntry)
-    .subscribe((response)=>{
-      this.allBeers();
-      location.reload();
-      console.log('This======>' + response + "<==== was added into the collection")
+
+  beersFromBrewery(){
+    this.theService.breweryBeers(this.theId)
+    .subscribe((res)=>{
+      this.breweriesBeers = res;
     });
   }
+
+
   ngOnInit() {
     this.allBeers();
   }
