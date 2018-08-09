@@ -24,6 +24,7 @@ import { EditBeerReviewComponent } from './edit-beer-review/edit-beer-review.com
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddBeerComponent } from './brewery/add-beer/add-beer.component';
 
 
 
@@ -52,6 +53,7 @@ const routes: Routes = [
     BeerDetailsComponent,
     NavBarComponent,
     FooterComponent,
+    AddBeerComponent,
   ],
 
   imports: [
