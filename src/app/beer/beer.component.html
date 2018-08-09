@@ -2,9 +2,7 @@
 
 <hr />
 <h2>We can iterate over beers</h2>
-<div class="" *ngFor="let aBeer of beers">
-  <!-- <div class="" *ngFor="let aBrewery of breweriesBeers">
-  <div class="" *ngIf="(aBeer.brewery ===  aBrewery._id)"> -->
+  <div class="" *ngFor="let aBeer of breweriesBeers">
     <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
       <ngb-panel title={{aBeer.name}}>
         <ng-template ngbPanelContent>

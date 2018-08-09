@@ -12,7 +12,7 @@ export class BeerComponent implements OnInit {
 
   beers:Array<any>;
   breweriesBeers:Array<any>;
-  theId:any = {};
+  theId:any;
 
 
   constructor(private theService: BeerService, private myActivatedRoute: ActivatedRoute) { }
@@ -29,12 +29,16 @@ export class BeerComponent implements OnInit {
     this.theService.breweryBeers(this.theId)
     .subscribe((res)=>{
       this.breweriesBeers = res;
+      console.log("-----------------------", res)
     });
   }
 
 
   ngOnInit() {
-    this.allBeers();
+    this.myActivatedRoute.params.subscribe((params) => {
+      this.theId = params["id"]
+      this.beersFromBrewery();
+    })
   }
 
 }

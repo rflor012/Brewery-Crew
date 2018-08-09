@@ -29,8 +29,8 @@ export class BeerService {
     .catch(this.handleError)
   }
 
-  breweryBeers(theId){
-    return this.http.get('http://localhost:3000/api/breweries/' + theId + '/beers', theId)
+  breweryBeers(theBreweryID){
+    return this.http.get('http://localhost:3000/api/breweries/' + theBreweryID + '/beers')
     .map(res => res.json())
     .catch(this.handleError)
   }
