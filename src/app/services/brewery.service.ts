@@ -25,13 +25,13 @@ export class BreweryService {
 
 
   oneBrewery(brewery){
-    return this.http.get('http://localhost:3000/api/breweries/', brewery)
+    return this.http.get('http://localhost:3000/api/breweries/' + brewery.id, {withCredentials: true})
     .map(res => res.json())
     .catch(this.handleError)
   }
 
   breweryBeers(theBreweryID){
-    return this.http.get('http://localhost:3000/api/breweries/' + theBreweryID + '/beers', theBreweryID)
+    return this.http.get('http://localhost:3000/api/breweries/' + theBreweryID + '/beers', {withCredentials: true})
     .map(res => res.json())
     .catch(this.handleError)
   }
@@ -39,13 +39,14 @@ export class BreweryService {
   createBrewery(theBreweryEntry, userId){
     const newBrewery = theBreweryEntry
     newBrewery.userId = userId
-    return this.http.post('http://localhost:3000/api/breweries/create', newBrewery)
+    return this.http.post('http://localhost:3000/api/breweries/create', newBrewery, {withCredentials: true})
     .map((res) => res.json())
     .catch(this.handleError)
   }
 
-  createBeer(theBreweryID){
-    return this.http.post('http://localhost:3000/api/breweries/' + theBreweryID + '/beers/create', theBreweryID)
+  createBeer(beerEntry, theBreweryID){
+    console.log("===================================>", theBreweryID)
+    return this.http.post('http://localhost:3000/api/breweries/' + theBreweryID._id + '/beers/create', beerEntry, {withCredentials: true})
     .map((res) => res.json())
     .catch(this.handleError)
   }

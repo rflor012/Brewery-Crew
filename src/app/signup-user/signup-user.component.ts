@@ -15,8 +15,7 @@ export class SignupUserComponent implements OnInit {
   userBrewery: any = {}
   theActualUser:any = {};
   theError:any;
-  
-  
+
 
   constructor(private authService: AuthService, private breweryService: BreweryService , private myRouter: Router) { }
   successCallback(userObject){
@@ -35,19 +34,19 @@ export class SignupUserComponent implements OnInit {
     .subscribe(userFromApi => {
       this.successCallback(userFromApi);
       console.log("hiiiiiiiiii", this.theActualUser);
-
-
+      
       this.breweryService.createBrewery(this.userBrewery, this.theActualUser._id)
       .subscribe(breweryFromApi => {
         this.myRouter.navigate(['/'])
+
       },
         theError =>{this.errorCallback(theError)}
       )},
       theError => {this.errorCallback(theError)}
-      
+
 
   );
-   
+
   }
 
   ngOnInit() {

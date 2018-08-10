@@ -16,7 +16,7 @@ export class BreweryComponent implements OnInit {
   constructor(private myActivatedRoute: ActivatedRoute, private theService: BreweryService) { }
 
   ngOnInit() {
-    this.allBreweries();
+    this.allBreweries()
   }
 
   addNewBrewery(){
