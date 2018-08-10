@@ -1,7 +1,7 @@
 
 <div class="formContainer d-flex">
 <div class="loginForm">
-<h2>SignUp as an User</h2> <br>
+<h2>Sign Up</h2> <br>
 <form (submit)="signingUp()">
 
   <label for="email">Email</label>
@@ -21,7 +21,7 @@
 
 
 <div class="breweryForm" *ngIf="signUpUser.role === 'brewery'">
-  <h3>Brewery information</h3> <br><br>
+
 
   <label>Name</label>
   <input type="text" name="theName" [(ngModel)]="userBrewery.name"><br>
@@ -29,16 +29,16 @@
   <label>Adress</label>
   <input type="text" name="theAddress" [(ngModel)]="userBrewery.adress"><br>
 
-  <label>City</label>
+  <!-- <label>City</label>
   <input type="text" name="theCity" [(ngModel)]="userBrewery.city"><br>
   
   <label>State</label>
   <input type="text" name="theState" [(ngModel)]="userBrewery.state"><br>
 
   <label>Zip code</label>
-  <input type="text" name="theZip" [(ngModel)]="userBrewery.zip"><br>
+  <input type="text" name="theZip" [(ngModel)]="userBrewery.zip"><br> -->
 
-  <label>Hours of operation</label>
+  <label>Hours </label>
   <input type="text" name="theHours" [(ngModel)]="userBrewery.hours"><br>
 
   <label>Phone</label>
@@ -63,4 +63,4 @@
 
 </div>
 
-<p>message: {{theError | json}}</p>
+<!-- <p>message: {{theError | json}}</p> -->

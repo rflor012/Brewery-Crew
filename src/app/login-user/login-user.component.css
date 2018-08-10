@@ -14,13 +14,13 @@ body{
   align-items: space-around;
   /* background-color: blue; */
   width: 50vw;
-  height: 90vh;
-  margin: 10%;
+  height: 50vh;
+  margin: 5%;
 }
 
 .formContainer{
   justify-content: center;
-  /* height: 90vh; */
+  height: 50vh;
   
 }
 
@@ -32,4 +32,9 @@ form{
 }
 h2{
   text-align: center;
+}
+
+.wrapper{
+  background-color: #F8F8FA;
+
 }

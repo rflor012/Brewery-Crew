@@ -13,7 +13,7 @@ body{
   align-items: space-around;
   /* background-color: blue; */
   width: 50vw;
-  height: 115vh;
+  height: 145vh;
   margin: 10%;
 }
 
@@ -34,6 +34,11 @@ h2{
 }
 
 .breweryForm{
-  background-color: blue;
-  height: 100vh;
+  /* background-color: blue; */
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
 }
