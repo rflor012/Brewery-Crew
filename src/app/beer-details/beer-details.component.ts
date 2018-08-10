@@ -56,7 +56,7 @@ export class BeerDetailsComponent implements OnInit {
     this.theService.removeReview(index, reviewID)
       //delete for reviews, reviews is an array within an array
     .subscribe(() => {
-      this.router.navigate(['/beers/._id'])
+      location.reload()
     })
   }
 }
