@@ -15,12 +15,7 @@ export class SignupUserComponent implements OnInit {
   userBrewery: any = {}
   theActualUser:any = {};
   theError:any;
-<<<<<<< HEAD
 
-=======
-  
-  
->>>>>>> d4f5e7519c89ab85b3c51316da5fee8e902c8e2a
 
   constructor(private authService: AuthService, private breweryService: BreweryService , private myRouter: Router) { }
   successCallback(userObject){
@@ -39,25 +34,16 @@ export class SignupUserComponent implements OnInit {
     .subscribe(userFromApi => {
       this.successCallback(userFromApi);
       console.log("hiiiiiiiiii", this.theActualUser);
-
-
-<<<<<<< HEAD
-      this.breweryService.createBrewery(this.userBrewery)
-      .subscribe(breweryFromApi => {},
-        theError =>{this.errorCallback(theError)}
-      )
-
-
-=======
+      
       this.breweryService.createBrewery(this.userBrewery, this.theActualUser._id)
       .subscribe(breweryFromApi => {
         this.myRouter.navigate(['/'])
->>>>>>> d4f5e7519c89ab85b3c51316da5fee8e902c8e2a
+
       },
         theError =>{this.errorCallback(theError)}
       )},
       theError => {this.errorCallback(theError)}
-      
+
 
   );
 

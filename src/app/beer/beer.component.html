@@ -1,15 +1,17 @@
-<h2>Welcome to the Beer Component Portion</h2>
+<h2>Viewing Beer List</h2>
+<div class="wrapper">
 
-<hr />
-<h2>We can iterate over beers</h2>
-  <div class="" *ngFor="let aBeer of breweriesBeers">
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-      <ngb-panel title={{aBeer.name}}>
-        <ng-template ngbPanelContent>
-          <p> {{aBeer.brewery}}</p>
-          <p> {{aBeer.description}}</p>
-          <p> {{aBeer.alchContent}}</p>
-          <p> {{aBeer.price}}</p>
-          <a [routerLink]="['/beers', aBeer._id]">See Details</a>
-        </ng-template>
-      </ngb-panel>
+<div class="card-columns">
+  <div class="card" *ngFor="let aBeer of breweriesBeers">
+    <h2 class="card-title">{{aBeer.name}}</h2>
+    <hr />
+    <div class="card-body">
+      <p>Brewery ID: {{aBeer.brewery}}</p>
+      <p>Description: {{aBeer.description}}</p>
+      <p>Alchohol Content:  {{aBeer.alchContent}}</p>
+      <p>Price: {{aBeer.price}}</p>
+      <a [routerLink]="['/beers', aBeer._id]">See Details</a>
+      </div>
+    </div>
+  </div>
+</div>

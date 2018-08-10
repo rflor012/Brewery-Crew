@@ -36,8 +36,9 @@ export class BreweryService {
     .catch(this.handleError)
   }
 
-  createBrewery(theBreweryEntry){
+  createBrewery(theBreweryEntry, userId){
     const newBrewery = theBreweryEntry
+    newBrewery.userId = userId
     return this.http.post('http://localhost:3000/api/breweries/create', newBrewery, {withCredentials: true})
     .map((res) => res.json())
     .catch(this.handleError)

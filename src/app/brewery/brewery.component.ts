@@ -20,7 +20,7 @@ export class BreweryComponent implements OnInit {
   }
 
   addNewBrewery(){
-    this.theService.createBrewery(this.theNewBreweryEntry)
+    this.theService.createBrewery(this.theNewBreweryEntry, this.theUserId)
     .subscribe((response)=>{
       this.theNewBreweryEntry = {};
       this.allBreweries();

@@ -1,0 +1,16 @@
+.wrapper{
+  position:relative;
+  width: 100vw;
+  height:75vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /* z-index: 1; */
+  background:linear-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+      ), url('/assets/home-images/HQtaproom.jpg');
+      background-size: contain;
+      background-repeat: repeat;
+background-color: white
+}
