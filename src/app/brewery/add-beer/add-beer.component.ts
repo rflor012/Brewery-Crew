@@ -24,7 +24,7 @@ export class AddBeerComponent implements OnInit {
     .subscribe((response)=>{
       this.theNewBeerEntry = {};
       this.showAllBeers();
-      console.log('This======>' + response + "<==== was added into the collection")
+      console.log('This======>' + this.theNewBeerEntry + "<==== was added into the collection")
     });
   }
 

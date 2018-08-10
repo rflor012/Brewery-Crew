@@ -1,15 +1,25 @@
 
-<h2>Login as a user </h2>
+
+
+
+<body>
+  <div class="formContainer d-flex ">
+  
+<div class="loginForm">
+<h2>Login </h2><br><br>
 <form (submit)="loggingIn()"  >
 
-  <label> Username</label>
-  <input type="text" name="theUsername" [(ngModel)]="loginUser.username" >
+<label> Username</label><br>
+<input type="text" name="theUsername" [(ngModel)]="loginUser.username" ><br>
 
-  <label> Password</label>
-  <input type="password" name="thePassword" [(ngModel)]="loginUser.password" >
+<label> Password</label><br>
+<input type="password" name="thePassword" [(ngModel)]="loginUser.password" ><br>
 
-  <button>Complete Registration</button>
+<button>Complete Registration</button><br>
 
 </form>
-
 <p>Don't have account? <a [routerLink]="['/signup']">Sign Up</a></p>
+</div>
+
+</div>
+</body>

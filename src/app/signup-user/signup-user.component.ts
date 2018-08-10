@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { BreweryService } from '../services/brewery.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -13,9 +15,14 @@ export class SignupUserComponent implements OnInit {
   userBrewery: any = {}
   theActualUser:any = {};
   theError:any;
+<<<<<<< HEAD
 
+=======
+  
+  
+>>>>>>> d4f5e7519c89ab85b3c51316da5fee8e902c8e2a
 
-  constructor(private authService: AuthService, private breweryService: BreweryService ) { }
+  constructor(private authService: AuthService, private breweryService: BreweryService , private myRouter: Router) { }
   successCallback(userObject){
     this.theActualUser = userObject;
     this.theError = "";
@@ -34,14 +41,24 @@ export class SignupUserComponent implements OnInit {
       console.log("hiiiiiiiiii", this.theActualUser);
 
 
+<<<<<<< HEAD
       this.breweryService.createBrewery(this.userBrewery)
       .subscribe(breweryFromApi => {},
         theError =>{this.errorCallback(theError)}
       )
 
 
+=======
+      this.breweryService.createBrewery(this.userBrewery, this.theActualUser._id)
+      .subscribe(breweryFromApi => {
+        this.myRouter.navigate(['/'])
+>>>>>>> d4f5e7519c89ab85b3c51316da5fee8e902c8e2a
       },
+        theError =>{this.errorCallback(theError)}
+      )},
       theError => {this.errorCallback(theError)}
+      
+
   );
 
   }

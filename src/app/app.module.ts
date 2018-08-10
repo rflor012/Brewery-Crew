@@ -34,7 +34,8 @@ const routes: Routes = [
   { path: 'login', component: LoginUserComponent},
   { path: 'breweries', component: BreweryComponent},
   { path: 'beers', component: BeerComponent},
-  { path: 'breweries/:id', component: AddBeerComponent},
+  { path: 'breweries/:id/add', component: AddBeerComponent},
+  { path: 'breweries/:id/beers', component: BeerComponent},
   { path: 'beers/:id', component: BeerDetailsComponent},
   { path: 'review/:id/edit', component: EditBeerReviewComponent}
 ];

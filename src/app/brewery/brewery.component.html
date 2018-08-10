@@ -15,7 +15,8 @@
         <p>{{aBrewery.phone}}</p>
         <p>{{aBrewery.site}}</p>
         <hr />
-        <p><a [routerLink]="['/breweries', aBrewery._id]" class="btn btn-primary" role="button">View Beers</a>
+        <p><a [routerLink]="['/breweries', aBrewery._id, 'beers']" class="btn btn-primary" role="button">View Beers</a>
+        <p><a [routerLink]="['/breweries', aBrewery._id, 'add']" class="btn btn-primary" role="button">Add Beers</a>
       </div>
     </div>
   </div>
