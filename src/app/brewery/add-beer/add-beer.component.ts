@@ -25,6 +25,7 @@ export class AddBeerComponent implements OnInit {
       this.theNewBeerEntry = {};
       this.showAllBeers();
       console.log('This======>' + this.theNewBeerEntry + "<==== was added into the collection")
+
     });
   }
 

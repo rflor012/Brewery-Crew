@@ -46,11 +46,11 @@ export class ReviewComponent implements OnInit {
     })
   }
 
-  deleteReview(){
-    console.log(this.thatOneReview._id)
-    this.viewService.removeReview(this.thatOneReview._id)
-    .subscribe(() => {
-      this.router.navigate(['/beers/._id'])
-    })
-  }
+  // deleteReview(){
+  //   console.log(this.thatOneReview._id)
+  //   this.viewService.removeReview(this.thatOneReview._id)
+  //   .subscribe(() => {
+  //     this.router.navigate(['/beers/._id'])
+  //   })
+  // }
 }
