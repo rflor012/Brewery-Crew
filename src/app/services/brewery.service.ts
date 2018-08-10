@@ -25,7 +25,7 @@ export class BreweryService {
 
 
   oneBrewery(brewery){
-    return this.http.get('http://localhost:3000/api/breweries/' + brewery._id, {withCredentials: true})
+    return this.http.get('http://localhost:3000/api/breweries/' + brewery.id, {withCredentials: true})
     .map(res => res.json())
     .catch(this.handleError)
   }
@@ -44,6 +44,7 @@ export class BreweryService {
   }
 
   createBeer(beerEntry, theBreweryID){
+    console.log("===================================>", theBreweryID)
     return this.http.post('http://localhost:3000/api/breweries/' + theBreweryID._id + '/beers/create', beerEntry, {withCredentials: true})
     .map((res) => res.json())
     .catch(this.handleError)

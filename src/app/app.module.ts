@@ -18,7 +18,7 @@ import { SignupUserComponent } from './signup-user/signup-user.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router'
 import { HttpModule } from '@angular/http';
 import { EditBeerReviewComponent } from './edit-beer-review/edit-beer-review.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'login', component: LoginUserComponent},
   { path: 'breweries', component: BreweryComponent},
   { path: 'beers', component: BeerComponent},
-  { path: 'breweries/:id/beers', component: BeerComponent},
+  { path: 'breweries/:id', component: AddBeerComponent},
   { path: 'beers/:id', component: BeerDetailsComponent},
   { path: 'review/:id/edit', component: EditBeerReviewComponent}
 ];

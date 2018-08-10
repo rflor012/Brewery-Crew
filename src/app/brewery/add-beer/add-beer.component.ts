@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BreweryService } from '../../services/brewery.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BeerService } from '../../services/beer.service';
+
 
 @Component({
   selector: 'app-add-beer',
@@ -9,23 +11,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AddBeerComponent implements OnInit {
 
-  theBreweryID:any = {};
+  theBreweryID:any;
   theNewBeerEntry:any = {};
   beers:Array<any>;
 
-  constructor(private theService: BreweryService, private myActivatedRoute: ActivatedRoute) { }
+  constructor(private theService: BreweryService, private theBeerService: BeerService, public myActivatedRoute: ActivatedRoute, router: Router) { }
 
   addNewBeer(){
+    console.log("***********************************--->", this.theNewBeerEntry)
+    console.log(" %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ", this.theBreweryID);
     this.theService.createBeer(this.theNewBeerEntry, this.theBreweryID)
     .subscribe((response)=>{
       this.theNewBeerEntry = {};
-      this.allBeers();
+      this.showAllBeers();
       console.log('This======>' + response + "<==== was added into the collection")
     });
   }
 
-  allBeers(){
-    this.theService.breweryBeers(this.theBreweryID)
+  showAllBeers(){
+    this.theBeerService.breweryBeers(this.theBreweryID)
     .subscribe((res)=>{
       this.beers = res;
     });
@@ -33,8 +37,9 @@ export class AddBeerComponent implements OnInit {
 
   ngOnInit() {
     this.myActivatedRoute.params.subscribe((params) => {
-      this.theBreweryID = params["id"]
-      this.allBeers();
+      console.log("the params ############################################ ", params)
+      this.theBreweryID = params['id']
+      this.showAllBeers();
     })
   }
 

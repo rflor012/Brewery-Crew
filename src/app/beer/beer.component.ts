@@ -15,7 +15,7 @@ export class BeerComponent implements OnInit {
   theId:any;
 
 
-  constructor(private theService: BeerService, private myActivatedRoute: ActivatedRoute) { }
+  constructor(private theService: BeerService, public myActivatedRoute: ActivatedRoute) { }
 
 
   allBeers(){
