@@ -1,0 +1,44 @@
+body{
+  background-color: #F8F8FA;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loginForm{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  /* background-color: blue; */
+  width: 50vw;
+  height: 145vh;
+  margin: 10%;
+}
+
+.formContainer{
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+
+.breweryForm{
+  /* background-color: blue; */
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
